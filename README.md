@@ -1,6 +1,6 @@
 # vue3-thenetninja-lessons
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3 Lessons from The Net Ninja
 
 ## Recommended IDE Setup
 
