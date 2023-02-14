@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to the new blog",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam asperiores aut consectetur consequatur, consequuntur cumque debitis distinctio dolorum facilis ipsum iste laboriosam molestiae nemo obcaecati odio officia porro quae quaerat quas, quis quod rerum tempora tenetur vero voluptas, voluptate. Aliquid aut consequuntur corporis, dolore excepturi obcaecati perferendis, placeat provident quis ratione, sit vitae voluptas voluptatum. Accusamus beatae corporis deleniti deserunt dolorem ducimus est exercitationem id iste iure necessitatibus porro quaerat quis similique sint, vero, voluptatum. Dolores eos esse eveniet incidunt iure modi nesciunt non obcaecati, sit unde! A aliquam aspernatur beatae dolorem ducimus earum eius enim eum explicabo fuga illo in magni molestiae, qui quia quibusdam sapiente, sit, sunt? Consectetur consequatur, cumque debitis dolor dolore dolores ea expedita facilis labore laborum minima natus necessitatibus nihil odit omnis optio praesentium quas ratione sapiente similique tempore ullam unde voluptatum? Accusantium aperiam at cupiditate harum hic id iste minima nihil, nisi odit perspiciatis praesentium repellendus soluta tempora vitae. A, accusantium assumenda blanditiis dolore dolores excepturi exercitationem hic iste natus obcaecati pariatur, saepe veritatis. Cupiditate dolores incidunt minima praesentium quos repellendus totam. Blanditiis corporis cumque, error eveniet explicabo itaque labore maiores minus nihil nobis, omnis perspiciatis porro quae quidem, quod soluta totam. Tenetur?",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Top 5 CSS Tips",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam asperiores aut consectetur consequatur, consequuntur cumque debitis distinctio dolorum facilis ipsum iste laboriosam molestiae nemo obcaecati odio officia porro quae quaerat quas, quis quod rerum tempora tenetur vero voluptas, voluptate. Aliquid aut consequuntur corporis, dolore excepturi obcaecati perferendis, placeat provident quis ratione, sit vitae voluptas voluptatum. Accusamus beatae corporis deleniti deserunt dolorem ducimus est exercitationem id iste iure necessitatibus porro quaerat quis similique sint, vero, voluptatum. Dolores eos esse eveniet incidunt iure modi nesciunt non obcaecati, sit unde! A aliquam aspernatur beatae dolorem ducimus earum eius enim eum explicabo fuga illo in magni molestiae, qui quia quibusdam sapiente, sit, sunt? Consectetur consequatur, cumque debitis dolor dolore dolores ea expedita facilis labore laborum minima natus necessitatibus nihil odit omnis optio praesentium quas ratione sapiente similique tempore ullam unde voluptatum? Accusantium aperiam at cupiditate harum hic id iste minima nihil, nisi odit perspiciatis praesentium repellendus soluta tempora vitae. A, accusantium assumenda blanditiis dolore dolores excepturi exercitationem hic iste natus obcaecati pariatur, saepe veritatis. Cupiditate dolores incidunt minima praesentium quos repellendus totam. Blanditiis corporis cumque, error eveniet explicabo itaque labore maiores minus nihil nobis, omnis perspiciatis porro quae quidem, quod soluta totam. Tenetur?",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    }
+  ]
+}
