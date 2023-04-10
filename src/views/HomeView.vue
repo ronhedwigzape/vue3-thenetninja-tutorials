@@ -43,7 +43,10 @@ import getPosts from "../composables/getPosts";
 export default {
   name: 'HomeView',
   components: { PostList },
+
+    // --------Setup runs first before any lifecycle hooks-------
   setup() {
+      // variables can make reactive and not (somposition api is customizable)
     const {posts, error, load } = getPosts()
 
     load()
@@ -88,8 +91,8 @@ export default {
     //
     //
 
-
-    // const p = ref(null)
+    // -------------Refs can make values reactive------------------
+    // const p = ref(null) ------add reference to paragraph
     console.log()
 
     // const name = ref('mario')
@@ -98,7 +101,7 @@ export default {
     // const handleClick = () => {
     //   // console.log(p.value)
     //   // p.value.classList.add('test')
-    //   // p.value.textContent = 'helfos'
+    //   // p.value.textContent = 'hello ninjas'
     //   name.value = 'luigi'
     //   age.value = 35
     // }
