@@ -12,9 +12,9 @@
 <!--  <h2>Refs</h2>-->
 <!--  <p>{{ ninjaOne.name }} - {{ ninjaOne.age }}</p>-->
 <!--  <button @click="updateNinjaOne">Update Ninja One</button>-->
-<!--  <h2>Reactive</h2>-->
-<!--  <p>{{ ninjaTwo.name }} - {{ ninjaTwo.age }} - {{ nameTwo }}</p>-->
-<!--  <button @click="updateNinjaTwo">Update Ninja Two</button>-->
+  <h2>Reactive</h2>
+  <p>{{ ninjaTwo.name }} - {{ ninjaTwo.age }} - {{ nameTwo }}</p>
+  <button @click="updateNinjaTwo">Update Ninja Two</button>
 
 <!--  <h1>Home</h1>-->
 <!--  <input type="text" v-model="search">-->
@@ -56,19 +56,19 @@ export default {
     // // Watch and Watch Effect
     // const search = ref('')
     // const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bowser', 'koopa', 'peach'])
-    //
+
     // const stopWatch = watch(search, () => {
     //   console.log('watch')
     // })
-    //
+
     // const stopEffect = watchEffect(() => {
     //   console.log('watch effect ran', search.value )
     // })
-    //
-    // const matchingNames = computed(() => {
-    //   return names.value.filter((name) => name.includes(search.value))
-    // })
-    //
+
+    const matchingNames = computed(() => {
+      return names.value.filter((name) => name.includes(search.value))
+    })
+
     // const handleClick = () => {
     //   stopWatch()
     //   stopEffect()
@@ -76,24 +76,27 @@ export default {
 
     // const ninjaOne = ref({ name: 'mario', age: 32})
     // const ninjaTwo = reactive({name: 'luigi', age: 35})
-    //
+
     // const nameOne = ref('mario')
-    // const nameTwo = reactive('luigi')
-    //
+    // const nameTwo = reactive('luigi');
+
     // const updateNinjaOne = () => {
+    //  // using ref we have to use .value
     //   ninjaOne.value.age = 40
     // }
-    //
+
     // const updateNinjaTwo = () => {
-    //   ninjaTwo.age = 45
-    //   nameTwo = 'mario'
+    //     // using reactive we dont have to use .value
+    //     // the drawbacks of using reactive is it can't use primitive values
+    //     // can retain reactivity when exposed to functions
+    //   ninjaTwo.age = 45;
     // }
     //
     //
 
     // -------------Refs can make values reactive------------------
     // const p = ref(null) ------add reference to paragraph
-    console.log()
+    // console.log();
 
     // const name = ref('mario')
     // const age = ref(30)
@@ -108,7 +111,7 @@ export default {
     return {
       posts,
       showPosts,
-      error
+      error,
       // names,
       // search,
       // matchingNames,
@@ -118,7 +121,7 @@ export default {
       // updateNinjaOne,
       // ninjaTwo,
       // updateNinjaTwo,
-      // nameTwo
+      // nameTwo,
     }
   }
   // created() {
