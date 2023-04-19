@@ -1,7 +1,5 @@
 <template>
     <div class="home">
-
-
         <!--  home-->
         <!--  <p>My name is {{ name }} and my age is {{ age }}</p>-->
         <!--  <button @click="handleClick">Click Me</button>-->
@@ -16,22 +14,24 @@
         <!--  <p>{{ ninjaTwo.name }} - {{ ninjaTwo.age }} - {{ nameTwo }}</p>-->
         <!--  <button @click="updateNinjaTwo">Update Ninja Two</button>-->
 
-        <h1>Home</h1>
-        <input type="text" v-model="search">
-        <p>search term - {{ search }}</p>
-        <div v-for="name in matchingNames" :key="name">
-            {{ name }}
-        </div>
-        <!--  <button @click="handleClick">Stop Watching</button>-->
+        <!--        <h1>Home</h1>-->
+        <!--        <input type="text" v-model="search">-->
+        <!--        <p>search term - {{ search }}</p>-->
+        <!--        <div v-for="name in matchingNames" :key="name">-->
+        <!--            {{ name }}-->
+        <!--        </div>-->
+        <!--          <button @click="handleClick">Stop Watching</button>-->
 
-        <h1>Home</h1>
-        <div v-if="error">{{ error }}</div>
-        <div v-if="posts.length">
-            <PostList v-if="showPosts" :posts="posts"/>
-        </div>
-        <div v-else>Loading...</div>
-        <button @click="showPosts = !showPosts">toggle posts</button>
-        <button @click="posts.pop()">delete a post</button>
+        <!--        <h1>Home</h1>-->
+        <!--        <div v-if="error">{{ error }}</div>-->
+        <!--        <div v-if="posts.length">-->
+        <!--            <PostList v-if="showPosts" :posts="posts"/>-->
+        <!--        </div>-->
+        <!--        <div v-else>Loading...</div>-->
+        <!--        <button @click="showPosts = !showPosts">toggle posts</button>-->
+        <!--        <button @click="posts.pop()">delete a post</button>-->
+
+        
     </div>
 </template>
 <script>
@@ -47,15 +47,15 @@ export default {
     // --------Setup runs first before any lifecycle hooks-------
     setup() {
         // variables can make reactive and not (somposition api is customizable)
-        const {posts, error, load} = getPosts()
+        // const {posts, error, load} = getPosts()
 
         load()
 
-        const showPosts = ref(true)
+        // const showPosts = ref(true)
 
         // // Watch and Watch Effect
-        const search = ref('')
-        const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bowser', 'koopa', 'peach'])
+        // const search = ref('')
+        // const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bowser', 'koopa', 'peach'])
 
         // const stopWatch = watch(search, () => {
         //   console.log('watch')
@@ -65,27 +65,32 @@ export default {
         // it is not like updated
         // used to watch for changes to a specific reactive property
         // and perform some action when the property changes
-        watch(search, () => {
-            console.log('watch function ran');
-        })
+        // const stopWatch = watch(search, () => {
+        //     // if something is new to data
+        //     // watch can receive the data and display it using the
+        //     // callback function
+        //     console.log('watch function ran');
+        // })
 
-        // watch efffect rans once initially
-        watchEffect(() => {
-            // watch effect running everytime search values changes
-            console.log('watchEffect function ran', search.value);
-        })
+        // watch effect runs once initially
+        // const stopEffect = watchEffect(() => {
+        //     // watch effect running everytime search values changes
+        //     console.log('watchEffect function ran', search.value);
+        // })
 
         //---------- Computed property returns a updated values based on other values --------//
         // a function if the searched value matches the names
-        const matchingNames = computed(() => {
-            // gets the string that is included in the names
-            return names.value.filter((name) => name.includes(search.value))
-        });
+        // const matchingNames = computed(() => {
+        //     // gets the string that is included in the names
+        //     return names.value.filter((name) => name.includes(search.value))
+        // });
 
+        // watch and watchEffect stops when you call in
+        // variable and when clicked it stops
         // const handleClick = () => {
-        //   stopWatch()
-        //   stopEffect()
-        // }
+        //   stopWatch();
+        //   stopEffect();
+        // };
 
         // const ninjaOne = ref({ name: 'mario', age: 32})
         // const ninjaTwo = reactive({name: 'luigi', age: 35})
@@ -123,12 +128,12 @@ export default {
         //   age.value = 35
         // }
         return {
-            posts,
-            showPosts,
-            error,
-            names,
-            search,
-            matchingNames,
+            // posts,
+            // showPosts,
+            // error,
+            // names,
+            // search,
+            // matchingNames,
             // // age,
             // handleClick,
             // ninjaOne,
@@ -140,13 +145,13 @@ export default {
     },
     // ---------------- Life cycle hooks -------------------//
     beforeUpdate() {
-        console.log('beforeUpdate');
+        // console.log('beforeUpdate');
     },
     // Updated is called everytime the component's reactive properties
     // or computed properties have changed, and the component has been
     // re-rendered with the new data.
     updated() {
-        console.log('updated');
+        // console.log('updated');
     },
 
     // ---- beforeCreate and created are available ----
@@ -160,20 +165,20 @@ export default {
 
 
     beforeMount() {
-        console.log('beforeMount');
+        // console.log('beforeMount');
     },
     mounted() {
-      console.log('mounted');
+      // console.log('mounted');
     },
     beforeUnmount() {
-        console.log('beforeUnmount');
+        // console.log('beforeUnmount');
     },
     unmounted() {
-        console.log('unmounted');
+        // console.log('unmounted');
     },
-    errorCaptured(error, instance) {
-        console.log(error);
-        console.log(instance);
-    }
+    // errorCaptured(error, instance) {
+        // console.log(error);
+        // console.log(instance);
+    // }
 }
 </script>
