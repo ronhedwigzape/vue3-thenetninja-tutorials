@@ -34,8 +34,15 @@
         <!--   Episode 11 - THe Composition API  Part 2   -->
 
         <h1>Home</h1>
-        <PostList :posts="posts" v-if="showPosts"/>
+        <div v-if="error">{{ error }}</div>
 
+        <!-- This will be rendered if posts.length has value -->
+        <!-- Length will be either 0 || greater than 0 -->
+        <div v-if="posts.length">
+            <PostList :posts="posts" v-if="showPosts"/>
+        </div>
+
+        <div v-else>Loading...</div>
         <button @click="showPosts = !showPosts">Toggle Posts</button>
         <button @click="posts.pop()">Delete post</button>
 
@@ -52,24 +59,41 @@ export default {
     components: {PostList},
 
     // --------Setup runs first before any lifecycle hooks-------
+    // ----------Lifecycle hooks can be run inside setup--------
     setup() {
         //  Episode 11 - THe Composition API  Part 2
 
-        const posts = ref([
-            { title: 'welcome to the blog', body: 'Lorem ipsum', id: 1 },
-            { title: 'top 5 CSS tips', body: 'lorem ipsum', id: 2 }
-        ]);
-
-        const count = ref({title: "Mario", body: "This is the body." })
-
+        const posts = ref([]);
+        const error = ref(null);
         const showPosts = ref(true);
 
+        const load = async () => {
+            try {
+                // gets the data
+                let data = await fetch('http://localhost:3000/posts');
+                // checks if there is data
+                if (!data.ok) {
+                    // throw an error if data is not available
+                    // This passes on catch block
+                    throw Error('no data available');
+                }
 
+                posts.value = await data.json()
+            }
+            catch (err) {
+                error.value = err.message;
+                console.error(error.value);
+            }
+        }
+
+
+
+        load()
 
         return {
             posts,
-            count,
-            showPosts
+            showPosts,
+            error
         }
 
 
