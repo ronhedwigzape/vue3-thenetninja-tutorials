@@ -31,7 +31,11 @@
         <!--        <button @click="showPosts = !showPosts">toggle posts</button>-->
         <!--        <button @click="posts.pop()">delete a post</button>-->
 
-        
+        <!--   Episode 11 - THe Composition API  Part 2   -->
+
+        <PostList :posts="posts"/>
+        <h1>Home</h1>
+
     </div>
 </template>
 <script>
@@ -46,10 +50,31 @@ export default {
 
     // --------Setup runs first before any lifecycle hooks-------
     setup() {
+        //  Episode 11 - THe Composition API  Part 2
+
+        const posts = ref([
+            { title: 'welcome to the blog', body: 'Lorem ipsum', id: 1 },
+            { title: 'top 5 CSS tips', body: 'lorem ipsum', id: 2 }
+        ]);
+
+        const count = ref({title: "Mario", body: "This is the body." })
+        return {
+            posts,
+            count
+        }
+
+
+
+
+
+
+
+
+
         // variables can make reactive and not (somposition api is customizable)
         // const {posts, error, load} = getPosts()
 
-        load()
+        // load()
 
         // const showPosts = ref(true)
 
@@ -127,7 +152,7 @@ export default {
         //   name.value = 'luigi'
         //   age.value = 35
         // }
-        return {
+        // return {
             // posts,
             // showPosts,
             // error,
@@ -141,7 +166,7 @@ export default {
             // ninjaTwo,
             // updateNinjaTwo,
             // nameTwo,
-        }
+        // }
     },
     // ---------------- Life cycle hooks -------------------//
     beforeUpdate() {
