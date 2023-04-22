@@ -33,8 +33,11 @@
 
         <!--   Episode 11 - THe Composition API  Part 2   -->
 
-        <PostList :posts="posts"/>
         <h1>Home</h1>
+        <PostList :posts="posts" v-if="showPosts"/>
+
+        <button @click="showPosts = !showPosts">Toggle Posts</button>
+        <button @click="posts.pop()">Delete post</button>
 
     </div>
 </template>
@@ -58,10 +61,18 @@ export default {
         ]);
 
         const count = ref({title: "Mario", body: "This is the body." })
+
+        const showPosts = ref(true);
+
+
+
         return {
             posts,
-            count
+            count,
+            showPosts
         }
+
+
 
 
 
