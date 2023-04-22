@@ -51,6 +51,8 @@
 <script>
 import PostList from "../components/PostList.vue";
 import {ref, reactive, computed, watch, watchEffect} from "vue";
+
+// Importing getPosts automatically knows that it is JavaScript file
 import getPosts from "../composables/getPosts";
 
 
@@ -63,36 +65,19 @@ export default {
     setup() {
         //  Episode 11 - THe Composition API  Part 2
 
-        const posts = ref([]);
-        const error = ref(null);
+
         const showPosts = ref(true);
 
-        const load = async () => {
-            try {
-                // gets the data
-                let data = await fetch('http://localhost:3000/posts');
-                // checks if there is data
-                if (!data.ok) {
-                    // throw an error if data is not available
-                    // This passes on catch block
-                    throw Error('no data available');
-                }
+        // We can destructure the returned value there in getPosts
+        //
+        const { posts, error, load } = getPosts();
 
-                posts.value = await data.json()
-            }
-            catch (err) {
-                error.value = err.message;
-                console.error(error.value);
-            }
-        }
+        load();
 
-
-
-        load()
 
         return {
-            posts,
             showPosts,
+            posts,
             error
         }
 
